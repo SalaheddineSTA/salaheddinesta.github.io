@@ -193,12 +193,8 @@
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      const data = new FormData(contactForm);
-      const name = data.get("name") || "";
-      const email = data.get("email") || "";
-      const message = data.get("message") || "";
-      const subject = encodeURIComponent("Message from " + name);
-      const body = encodeURIComponent(message + "\n\n— " + name + " (" + email + ")");
+      const subject = encodeURIComponent("Portfolio contact");
+      const body = encodeURIComponent("Hello Salaheddine,\n\nI came across your portfolio and wanted to get in touch.\n");
       window.location.href = "mailto:saleh.sta@live.fr?subject=" + subject + "&body=" + body;
     });
   }
