@@ -143,6 +143,10 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 .btn-block{ width:100%; }
 .cv-actions{ display:flex; flex-direction:column; gap:10px; }
+.cv-btn{ justify-content:space-between; }
+.cv-btn-text{ flex:1; text-align:left; }
+.cv-lang{ display:inline-flex; align-items:center; gap:8px; margin-left:auto; color:rgba(244,246,244,.9); font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.cv-bar{ width:1px; height:16px; background:rgba(244,246,244,.45); }
 .btn-primary{
   background:var(--accent);
   color:#f4f6f4;
