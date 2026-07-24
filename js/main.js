@@ -65,6 +65,35 @@
     return years + (years === 1 ? " year ago" : " years ago");
   }
 
+  function extractReadmeQuoteLine(content) {
+    const lines = content.split(/\r?\n/);
+    for (let i = 0; i < lines.length; i++) {
+      const trimmed = lines[i].trim();
+      if (trimmed.startsWith(">")) {
+        return trimmed.replace(/^>\s?/, "").trim();
+      }
+    }
+    return "";
+  }
+
+  function getRepoDescription(repo) {
+    return fetch("https://api.github.com/repos/" + GITHUB_USER + "/" + repo.name + "/readme", {
+      headers: { Accept: "application/vnd.github+json" }
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("README not found");
+        return res.json();
+      })
+      .then(function (data) {
+        if (!data.content) return repo.description || "No description yet.";
+        const decoded = window.atob(data.content.replace(/\s/g, ""));
+        return extractReadmeQuoteLine(decoded) || repo.description || "No description yet.";
+      })
+      .catch(function () {
+        return repo.description || "No description yet.";
+      });
+  }
+
   function repoCard(repo) {
     const a = document.createElement("a");
     a.className = "repo-card";
@@ -74,6 +103,8 @@
 
     const color = LANG_COLORS[repo.language] || "#8b96a0";
 
+    const descriptionText = repo.descriptionText || repo.description || "No description yet.";
+
     a.innerHTML =
       '<span class="bracket tl small"></span><span class="bracket tr small"></span>' +
       '<span class="bracket bl small"></span><span class="bracket br small"></span>' +
@@ -81,11 +112,11 @@
         '<svg viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.7-1.4-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.5.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 016 0c2.3-1.6 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>' +
         escapeHtml(repo.name) +
       "</span>" +
-      '<span class="repo-desc">' + escapeHtml(repo.description || "No description yet.") + "</span>" +
+      '<span class="repo-desc">' + escapeHtml(descriptionText) + "</span>" +
       '<span class="repo-meta">' +
         (repo.language ? '<span><span class="dot" style="background:' + color + '"></span>' + escapeHtml(repo.language) + "</span>" : "") +
         '<span>★ ' + repo.stargazers_count + "</span>" +
-        "<span>updated " + timeAgo(repo.pushed_at) + "</span>" +
+        "<span>" + timeAgo(repo.pushed_at) + "</span>" +
       "</span>";
     return a;
   }
@@ -112,8 +143,17 @@
         return;
       }
 
+      return Promise.all(top.map(function (repo) {
+        return getRepoDescription(repo).then(function (descriptionText) {
+          return Object.assign({}, repo, { descriptionText: descriptionText });
+        });
+      }));
+    })
+    .then(function (reposWithDescriptions) {
+      if (!reposWithDescriptions || !reposWithDescriptions.length) return;
+
       repoGrid.innerHTML = "";
-      top.forEach(function (repo) { repoGrid.appendChild(repoCard(repo)); });
+      reposWithDescriptions.forEach(function (repo) { repoGrid.appendChild(repoCard(repo)); });
     })
     .catch(function () {
       repoStatus.textContent =
