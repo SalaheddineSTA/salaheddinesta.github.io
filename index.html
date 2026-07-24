@@ -1,330 +1,302 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salaheddine STA — Software Engineer &amp; Computer Vision</title>
-<meta name="description" content="Salaheddine STA — Software Engineer (C++/Python), Computer Vision, PhD in Computer Science. Building real-time 3D vision systems for surgery and industry.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="data:,">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Salaheddine STA — Software Engineer specializing in C++, computer vision, and real-time medical imaging.">
+  <meta name="theme-color" content="#15251f">
+  <title>Salaheddine STA — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- decorative corner-bracket svg template, reused via CSS ::before/::after in most places,
-     but this defs block provides the frame used inside markup -->
+  <aside class="sidebar">
+    <div class="portrait-wrap">
+      <img class="portrait" src="assets/profile.jpg" alt="Portrait of Salaheddine STA" width="1071" height="1071">
+    </div>
 
-<div class="site">
+    <div class="identity">
+      <p class="eyebrow">Hello, I’m</p>
+      <h1>Salaheddine<br>STA</h1>
+      <p class="role">Software Engineer · C++<br>Computer Vision · PhD</p>
+    </div>
 
-  <!-- ============ SIDEBAR ============ -->
-  <aside class="sidebar" id="sidebar">
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation">
       <span></span><span></span><span></span>
     </button>
 
-    <div class="sidebar-scroll">
-      <div class="photo-frame">
-        <span class="bracket tl"></span><span class="bracket tr"></span>
-        <span class="bracket bl"></span><span class="bracket br"></span>
-        <img src="assets/profilePhoto.jpg" alt="Portrait of Salaheddine STA" id="portrait"
-             onerror="this.onerror=null;this.src='assets/photo-placeholder.png';">
-      </div>
+    <nav id="site-navigation" class="site-nav" aria-label="Main navigation">
+      <a class="active" href="#about">About <span>01</span></a>
+      <a href="#work">Work <span>02</span></a>
+      <a href="#experience">Experience <span>03</span></a>
+      <a href="#publications">Publications <span>04</span></a>
+      <a href="#blog">Blog <span>05</span></a>
+      <a href="#contact">Contact <span>06</span></a>
+    </nav>
 
-      <h1 class="name">Salaheddine <span>STA</span></h1>
-      <p class="role">Software Engineer (C++)<br>Computer&nbsp;Vision &middot; PhD</p>
-
-      <div class="cv-actions">
-        <a class="btn btn-primary btn-block cv-btn" href="assets/SalaheddineSTA_CV_EN.pdf" download>
-          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="cv-btn-text">Download my CV</span>
-          <span class="cv-lang"><span class="cv-bar"></span><span class="cv-lang-text">EN</span></span>
+    <div class="sidebar-footer">
+      <div class="socials" aria-label="Social profiles">
+        <a href="https://github.com/SalaheddineSTA" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.28-5.27-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.98 10.98 0 0 1 5.76 0c2.19-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.71 5.39-5.29 5.68.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/>
+          </svg>
         </a>
-        <a class="btn btn-primary btn-block cv-btn" href="assets/SalaheddineSTA_CV_FR.pdf" download>
-          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="cv-btn-text">Télécharger mon CV</span>
-          <span class="cv-lang"><span class="cv-bar"></span><span class="cv-lang-text">FR</span></span>
+        <a href="https://www.linkedin.com/in/salaheddinesta" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.47-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13Zm1.78 13.04H3.54V8.98H7.1v11.47ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"/>
+          </svg>
         </a>
-      </div>
-
-      <ul class="contact-list">
-        <li>
-          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M20 8.5V17a2 2 0 01-2 2H6a2 2 0 01-2-2V8.5m16 0L13.2 13a2 2 0 01-2.4 0L4 8.5m16 0V7a2 2 0 00-2-2H6a2 2 0 00-2 2v1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <a href="mailto:saleh.sta@live.fr">saleh.sta@live.fr</a>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-          <a href="tel:+33761479815">+33 7 61 47 98 15</a>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0119 9.5C19 14.9 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-          <span>France</span>
-        </li>
-      </ul>
-
-      <div class="social-row">
-        <a href="https://github.com/SalaheddineSTA" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-          <svg viewBox="0 0 24 24" width="17" height="17"><path fill="currentColor" d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.7-1.4-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.5.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 016 0c2.3-1.6 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/salaheddinesta/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-          <svg viewBox="0 0 24 24" width="17" height="17"><path fill="currentColor" d="M6.9 8.4H3.6V20H6.9V8.4zM5.3 3.4a1.9 1.9 0 100 3.8 1.9 1.9 0 000-3.8zM20.4 20h-3.3v-6c0-1.4 0-3.3-2-3.3s-2.4 1.6-2.4 3.2V20H9.4V8.4h3.2v1.6h.05c.45-.85 1.55-1.75 3.2-1.75 3.4 0 4.05 2.25 4.05 5.15V20z"/></svg>
-        </a>
-        <a href="https://scholar.google.com/citations?hl=en&user=L3KsKkMAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar / Research profile" title="Research profile">
-          <svg viewBox="0 0 24 24" width="17" height="17"><path fill="currentColor" d="M12 2L1 8.5l11 6.5 9-5.3V17h2V8.5L12 2zM5 12.4v4.2c0 2.4 3.1 4.4 7 4.4s7-2 7-4.4v-4.2l-7 4.1-7-4.1z"/></svg>
+        <a href="https://scholar.google.com/scholar?q=%22Salaheddine+STA%22" target="_blank" rel="noreferrer" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0 1.6 8.4 5.8 11.8v6.3L12 24l6.2-5.9v-6.3l1.8-1.45V16h2.4V8.4L12 0Zm0 3.1 6.55 5.3L12 13.7 5.45 8.4 12 3.1Zm-3.8 10.65L12 16.8l3.8-3.05v3.32L12 20.7l-3.8-3.63v-3.32Z"/>
+          </svg>
         </a>
       </div>
-
-      <nav class="side-section">
-        <h2 class="side-h">Languages</h2>
-        <ul class="kv-list">
-          <li><span>French</span><b>Fluent</b></li>
-          <li><span>English</span><b>Professional</b></li>
-          <li><span>Arabic</span><b>Native</b></li>
-        </ul>
-      </nav>
-
-      <div class="side-section">
-        <h2 class="side-h">Skills</h2>
-
-        <h3 class="skill-cat">Software Engineering</h3>
-        <div class="chip-row">
-          <span>Software Design</span><span>Performance Optimization</span>
-          <span>Software Validation</span><span>Debugging</span><span>Git</span><span>CI/CD</span>
-        </div>
-
-        <h3 class="skill-cat">Computer Vision</h3>
-        <div class="chip-row">
-          <span>Camera Calibration</span><span>Projective Geometry</span>
-          <span>2D/3D Pose Estimation</span><span>Registration</span>
-          <span>Object Detection</span><span>Image Segmentation</span>
-          <span>Point Cloud (RGB-D)</span><span>3D Reconstruction</span>
-        </div>
-
-        <h3 class="skill-cat">Artificial Intelligence</h3>
-        <div class="chip-row">
-          <span>Deep Learning</span><span>Machine Learning</span><span>nnU-Net</span><span>LLM</span><span>NLP</span>
-        </div>
-
-        <h3 class="skill-cat">Programming</h3>
-        <div class="chip-row">
-          <span>C++ 14/17/20</span><span>C</span><span>Python</span><span>Bash</span><span>Rust</span>
-        </div>
-
-        <h3 class="skill-cat">Libraries &amp; Frameworks</h3>
-        <div class="chip-row">
-          <span>PCL</span><span>OpenCV</span><span>ITK</span><span>VTK</span><span>VXL</span><span>CMake</span>
-        </div>
+      <div class="cv-downloads">
+        <a class="download-link" href="assets/SalaheddineSTA_CV_EN.pdf" download>
+          <span>Download CV</span>
+          <span class="download-language">EN ↓</span>
+        </a>
+        <a class="download-link secondary" href="assets/SalaheddineSTA_CV_FR.pdf" download>
+          <span>Télécharger mon CV</span>
+          <span class="download-language">FR ↓</span>
+        </a>
       </div>
     </div>
   </aside>
 
-  <div class="scrim" id="scrim"></div>
+  <main id="main">
+    <section id="about" class="hero">
+      <div class="hero-copy reveal">
+        <p class="kicker">Based in France · Building precise systems</p>
+        <h2>Turning complex visual data into <em>reliable software.</em></h2>
+        <p class="hero-intro">Software engineer with a PhD in Computer Science and more than four years of experience in software development, algorithm design, computer vision, and artificial intelligence.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
+          <a class="button text-button" href="mailto:saleh.sta@live.fr">saleh.sta@live.fr</a>
+        </div>
+      </div>
 
-  <!-- ============ MAIN ============ -->
-  <main class="main">
-
-    <nav class="topnav" id="topnav">
-      <a href="#about" class="active">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#experience">Experience</a>
-      <a href="#patents">Patents &amp; Papers</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <!-- ---------- HERO / ABOUT ---------- -->
-    <section id="about" class="section hero">
-      <div class="dotfield" aria-hidden="true"></div>
-      <p class="eyebrow">// hello_world</p>
-      <h2 class="hero-title">I turn depth data<br>into <span>certainty.</span></h2>
-      <p class="hero-lede">
-        I'm Salaheddine — a software engineer with a PhD in computer science, based in France.
-        For the last several years I've been writing C++ that has to work in real time and
-        get the geometry right the first time: tracking surgical instruments in 6D, reconstructing
-        3D scenes from depth cameras, and folding deep learning into production pipelines that
-        can't afford to guess.
-      </p>
-
-      <div class="stat-row">
-        <div class="stat"><span class="stat-num">4+</span><span class="stat-label">years in R&amp;D</span></div>
-        <div class="stat"><span class="stat-num">1</span><span class="stat-label">granted patent</span></div>
-        <div class="stat"><span class="stat-num">3</span><span class="stat-label">publications</span></div>
-        <div class="stat"><span class="stat-num">14/17/20</span><span class="stat-label">C++ standards</span></div>
+      <div class="hero-note reveal" aria-label="Current focus">
+        <span class="note-index">Currently</span>
+        <p>Developing high-performance C++ software for real-time image processing and industrial systems.</p>
       </div>
     </section>
 
-    <!-- ---------- PORTFOLIO ---------- -->
-    <section id="portfolio" class="section">
-      <h2 class="section-title"><span class="tag">01</span>Portfolio</h2>
-      <p class="section-sub">Latest activity, pulled live from <a href="https://github.com/SalaheddineSTA" target="_blank" rel="noopener">github.com/SalaheddineSTA</a>.</p>
+    <section class="facts" aria-label="Professional summary">
+      <div><strong>4+</strong><span>years in software<br>engineering</span></div>
+      <div><strong>PhD</strong><span>Computer Science<br>& medical imaging</span></div>
+      <div><strong>C++</strong><span>real-time systems<br>& computer vision</span></div>
+    </section>
 
-      <div id="repoGrid" class="repo-grid">
-        <!-- populated by js/main.js -->
-        <p class="repo-status" id="repoStatus">Calibrating… fetching latest repositories.</p>
+    <section id="work" class="section">
+      <header class="section-heading reveal">
+        <div><span class="section-number">02</span><p class="eyebrow">Selected work</p></div>
+        <h2>Latest repositories</h2>
+        <p>Fresh from GitHub. Experiments, tools, and ideas that are still moving.</p>
+      </header>
+      <div id="repos" class="repo-grid" aria-live="polite">
+        <div class="repo-skeleton"></div>
+        <div class="repo-skeleton"></div>
+        <div class="repo-skeleton"></div>
+      </div>
+      <div class="section-link-wrap">
+        <a class="arrow-link" href="https://github.com/SalaheddineSTA?tab=repositories" target="_blank" rel="noreferrer">View all on GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </section>
 
-    <!-- ---------- EXPERIENCE ---------- -->
     <section id="experience" class="section">
-      <h2 class="section-title"><span class="tag">02</span>Experience</h2>
+      <header class="section-heading reveal">
+        <div><span class="section-number">03</span><p class="eyebrow">The journey</p></div>
+        <h2>Experience & education</h2>
+      </header>
 
-      <div class="timeline">
-        <div class="tl-item">
-          <span class="bracket tl small"></span><span class="bracket tr small"></span>
-          <span class="bracket bl small"></span><span class="bracket br small"></span>
-          <span class="tl-date">2022 — Today</span>
-          <h3>R&amp;D Software Engineer</h3>
-          <p class="tl-org">INTRADYS &middot; Brest, France</p>
-          <ul>
-            <li>Developed and maintained C++ software for real-time image processing in an industrial environment.</li>
-            <li>Designed high-performance pipelines for filtering, registration, and 3D reconstruction.</li>
-            <li>Trained and validated deep learning (nnU-Net) models for automatic surgical instrument segmentation.</li>
-            <li>Optimized algorithms under strict real-time and reliability constraints.</li>
-          </ul>
-        </div>
-
-        <div class="tl-item">
-          <span class="bracket tl small"></span><span class="bracket tr small"></span>
-          <span class="bracket bl small"></span><span class="bracket br small"></span>
-          <span class="tl-date">2018 — 2024</span>
-          <h3>PhD &middot; Towards a Markerless CAOS System</h3>
-          <p class="tl-org">IMT Atlantique / LATIM INSERM U1101 &middot; Brest, France</p>
-          <ul>
-            <li>Built a complete C++ system for real-time 6D pose estimation of surgical instruments (Point Pair Feature).</li>
-            <li>Developed high-performance C++ algorithms for RGB-D point cloud processing, registration, and analysis.</li>
-            <li>Designed experimental protocols and benchmarked algorithms on synthetic and clinical datasets.</li>
-            <li>Co-invented a patented method for surgical instrument positioning verification with RGB-D cameras.</li>
-            <li>Supervised laboratory sessions for simulator development in Unity.</li>
-          </ul>
-        </div>
-
-        <div class="tl-item">
-          <span class="bracket tl small"></span><span class="bracket tr small"></span>
-          <span class="bracket bl small"></span><span class="bracket br small"></span>
-          <span class="tl-date">2018</span>
-          <h3>Software Systems Engineering Intern</h3>
-          <p class="tl-org">IMT Atlantique &middot; Brest, France</p>
-          <ul>
-            <li>Built a C++ application for real-time multimodal data fusion.</li>
-            <li>Developed algorithms for 3D surface reconstruction and mesh processing.</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3 class="edu-heading">Education</h3>
-      <div class="edu-grid">
-        <div class="edu-item">
-          <span class="tl-date">2024</span>
-          <h4>PhD — Towards a Markerless CAOS System</h4>
-          <p class="tl-org">IMT Atlantique / LATIM INSERM U1101 &middot; Brest, France</p>
-        </div>
-        <div class="edu-item">
-          <span class="tl-date">2018</span>
-          <h4>Master's Degree in Computer Vision</h4>
-          <p class="tl-org">USTHB &middot; Alger, Algérie</p>
-        </div>
-        <div class="edu-item">
-          <span class="tl-date">2016</span>
-          <h4>Bachelor's in Software &amp; Information Systems Engineering</h4>
-          <p class="tl-org">USTHB &middot; Alger, Algérie</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ---------- PATENTS & PUBLICATIONS (replaces "References") ---------- -->
-    <section id="patents" class="section">
-      <h2 class="section-title"><span class="tag">03</span>Patents &amp; Publications</h2>
-      <!--<p class="section-sub">The paper trail behind the code.</p>-->
-
-      <div class="pub-grid">
-        <a class="pub-card patent" href="https://patents.google.com/patent/EP4082469B8" target="_blank" rel="noopener">
-          <span class="pub-kind">Patent</span>
-          <h3>Automatic determination of an appropriate positioning of a patient-specific instrumentation with a depth camera</h3>
-          <p class="pub-meta">EP4082469B8 &middot; US12290325B2</p>
-        </a>
-        
-        <a class="pub-card" href="https://theses.hal.science/tel-05244883v1" target="_blank" rel="noopener">
-          <span class="pub-kind">Thesis &middot; 2024</span>
-          <h3>Towards a Markerless Computer Assisted Orthopaedic Surgery System</h3>
-          <p class="pub-meta">IMT Atlantique / LATIM INSERM U1101</p>
-        </a>
-
-        <a class="pub-card" href="https://onlinelibrary.wiley.com/doi/10.1002/rcs.2296" target="_blank" rel="noopener">
-          <span class="pub-kind">Journal &middot; 2021</span>
-          <h3>Towards Markerless Computer Assisted Surgery</h3>
-          <p class="pub-meta">The International Journal of Medical Robotics and Computer Assisted Surgery</p>
-        </a>
-
-        <a class="pub-card" href="https://doi.org/10.29007/zfg2" target="_blank" rel="noopener">
-          <span class="pub-kind">Conference &middot; 2020</span>
-          <h3>Towards Markerless 3D Pose Estimation for CAOS: A Comparison Study of Depth Cameras</h3>
-          <p class="pub-meta">CAOS 2020</p>
-        </a>
-
-        <a class="pub-card" href="https://doi.org/10.1007/s11548-019-01969-3" target="_blank" rel="noopener">
-          <span class="pub-kind">Conference &middot; 2019</span>
-          <h3>Towards a Markerless Computer Assisted Orthopaedic Surgery System</h3>
-          <p class="pub-meta">CARS 2019</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- ---------- BLOG ---------- -->
-    <section id="blog" class="section">
-      <h2 class="section-title"><span class="tag">04</span>Blog</h2>
-      <p class="section-sub">Notes on vision, C++, and whatever breaks the build this week.</p>
-
-      <div id="blogList" class="blog-list"><!-- populated by js/blog-data.js --></div>
-    </section>
-
-    <!-- ---------- CONTACT ---------- -->
-    <section id="contact" class="section">
-      <h2 class="section-title"><span class="tag">05</span>Contact</h2>
-      <p class="section-sub">Have a project, a bug, or just want to talk point clouds? Reach out.</p>
-
-      <div class="contact-form">
-        <div class="contact-card">
-          <span class="bracket tl small"></span><span class="bracket tr small"></span>
-          <span class="bracket bl small"></span><span class="bracket br small"></span>
-          <div class="contact-main">
-            <ul class="contact-details">
-              <li><b>Email</b><a href="mailto:saleh.sta@live.fr">saleh.sta@live.fr</a></li>
-              <li><b>Phone</b><a href="tel:+33761479815">+33 7 61 47 98 15</a></li>
-              <li><b>Location</b><span>France</span></li>
-            </ul>
-            <div class="social-row">
-              <a href="https://github.com/SalaheddineSTA" target="_blank" rel="noopener" aria-label="GitHub">
-                <svg viewBox="0 0 24 24" width="17" height="17"><path fill="currentColor" d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.7-1.4-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.5.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 016 0c2.3-1.6 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>
-              </a>
-              <a href="https://www.linkedin.com/in/salaheddinesta/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" width="17" height="17"><path fill="currentColor" d="M6.9 8.4H3.6V20H6.9V8.4zM5.3 3.4a1.9 1.9 0 100 3.8 1.9 1.9 0 000-3.8zM20.4 20h-3.3v-6c0-1.4 0-3.3-2-3.3s-2.4 1.6-2.4 3.2V20H9.4V8.4h3.2v1.6h.05c.45-.85 1.55-1.75 3.2-1.75 3.4 0 4.05 2.25 4.05 5.15V20z"/></svg>
-              </a>
-              <a href="https://scholar.google.com/citations?hl=en&user=L3KsKkMAAAAJ" target="_blank" rel="noopener" aria-label="Research profile">
-                <svg viewBox="0 0 24 24" width="17" height="17"><path fill="currentColor" d="M12 2L1 8.5l11 6.5 9-5.3V17h2V8.5L12 2zM5 12.4v4.2c0 2.4 3.1 4.4 7 4.4s7-2 7-4.4v-4.2l-7 4.1-7-4.1z"/></svg>
-              </a>
+      <div class="resume-layout">
+        <div>
+          <h3 class="column-title">Experience</h3>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><span>2022—Present</span><span>Brest, France</span></div>
+            <div class="timeline-body">
+              <h4>R&D Software Engineer</h4>
+              <p class="company">INTRADYS</p>
+              <ul class="experience-points">
+                <li>Developed and maintained C++ software for real-time image processing in an industrial environment.</li>
+                <li>Designed and developed high-performance software pipelines for filtering, registration, and 3D reconstruction.</li>
+                <li>Developed, trained, and validated Deep Learning (mUNet) models for automatic surgical instrument segmentation.</li>
+                <li>Optimized algorithm performance under strict real-time and reliability constraints.</li>
+                <li>Collaborated with multidisciplinary teams to translate business requirements into robust software solutions.</li>
+              </ul>
+              <div class="tags"><span>C++</span><span>Deep Learning</span><span>Real-time</span></div>
             </div>
-            <form class="contact-actions" id="contactForm">
-              <button type="submit" class="btn btn-primary">Send message</button>
-              <!-- <p class="form-note">This opens your email client with the message pre-filled — the page is static, so there's no server behind it. Swap in a form service (e.g. Formspree) if you'd rather it submit directly.</p> -->
-            </form>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><span>2018—2024</span><span>Brest, France</span></div>
+            <div class="timeline-body">
+              <h4>PhD Researcher · Computer Assisted Surgery</h4>
+              <p class="company">IMT Atlantique / LATIM INSERM U1101</p>
+              <ul class="experience-points">
+                <li>Designed and developed a complete C++ software for real-time 6D pose estimation of surgical instruments (Point-Pair Feature).</li>
+                <li>Developed high-performance C++ algorithms for RGB-D point cloud processing, registration, and analysis.</li>
+                <li>Designed, optimized, and validated algorithms under strict performance and robustness constraints.</li>
+                <li>Designed experimental protocols and benchmarked algorithms on synthetic and clinical datasets.</li>
+                <li>Co-invented a patented method for surgical instrument positioning verification using RGB-D cameras.</li>
+                <li>Supervised international interns for simulation development in Unity.</li>
+              </ul>
+              <div class="tags"><span>Computer Vision</span><span>RGB-D</span><span>Research</span></div>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><span>2018</span><span>Algiers, Algeria</span></div>
+            <div class="timeline-body">
+              <h4>Software Systems Engineering Intern</h4>
+              <p class="company">IMT Atlantique</p>
+              <ul class="experience-points">
+                <li>Developed a C++ software application for real-time multimodal data fusion.</li>
+                <li>Developed algorithms for 3D surface reconstruction and mesh processing.</li>
+              </ul>
+              <div class="tags"><span>C++</span><span>3D</span><span>Data Fusion</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div>
+          <div class="skills-panel reveal">
+            <h3 class="column-title">Core toolkit</h3>
+            <div class="toolkit-groups">
+              <div class="toolkit-group">
+                <h4>Software engineering</h4>
+                <div class="skill-cloud">
+                  <span>Software Design</span><span>Performance Optimization</span>
+                  <span>Software Validation</span><span>Debugging</span><span>Git</span><span>CI/CD</span>
+                </div>
+              </div>
+              <div class="toolkit-group">
+                <h4>Computer vision</h4>
+                <div class="skill-cloud">
+                  <span>Camera Calibration</span><span>Projective Geometry</span>
+                  <span>2D/3D Pose Estimation</span><span>Registration</span>
+                  <span>Object Detection</span><span>Image Segmentation</span>
+                  <span>RGB-D Point Clouds</span><span>3D Reconstruction</span>
+                </div>
+              </div>
+              <div class="toolkit-group">
+                <h4>Artificial intelligence</h4>
+                <div class="skill-cloud">
+                  <span>Deep Learning</span><span>Machine Learning</span>
+                  <span>mUNet</span><span>LLM</span><span>NLP</span>
+                </div>
+              </div>
+              <div class="toolkit-group">
+                <h4>Mathematics & analytics</h4>
+                <div class="skill-cloud">
+                  <span>Applied Mathematics</span><span>Statistics</span>
+                  <span>Data Analysis</span><span>Linear Algebra</span><span>Geometry</span>
+                </div>
+              </div>
+              <div class="toolkit-group">
+                <h4>Programming</h4>
+                <div class="skill-cloud">
+                  <span>C++14/17/20</span><span>C</span><span>Python</span><span>Bash</span><span>Rust</span>
+                </div>
+              </div>
+              <div class="toolkit-group">
+                <h4>Libraries & platforms</h4>
+                <div class="skill-cloud">
+                  <span>OpenCV</span><span>PCL</span><span>VTK</span><span>ITK</span>
+                  <span>CUDA</span><span>CMake</span><span>Linux</span><span>Windows</span>
+                </div>
+              </div>
+            </div>
+            <h4 class="language-title">Languages</h4>
+            <div class="languages"><span>French — fluent</span><span>English — professional</span><span>Arabic — native</span></div>
           </div>
-          <div class="contact-figure" aria-hidden="true">
-            <div class="lighthouse"></div>
+        </div>
+
+        <div class="education-section">
+          <h3 class="column-title">Education</h3>
+          <div class="education-grid">
+            <article class="education-card reveal">
+              <span>2024</span>
+              <h4>PhD in Computer Science</h4>
+              <p>IMT Atlantique · LATIM INSERM U1101</p>
+              <small>Towards a Markerless Computer Assisted Orthopaedic Surgery System</small>
+            </article>
+            <article class="education-card reveal">
+              <span>2018</span>
+              <h4>Master’s Degree in Computer Vision</h4>
+              <p>USTHB · Algiers, Algeria</p>
+            </article>
+            <article class="education-card reveal">
+              <span>2016</span>
+              <h4>Bachelor’s Degree in Software & Information Systems Engineering</h4>
+              <p>USTHB · Algiers, Algeria</p>
+            </article>
           </div>
         </div>
       </div>
-        
     </section>
 
-    <footer class="footer">
-      <p>Salaheddine STA</p>
-      <a href="#about" class="to-top">Back to top ↑</a>
-    </footer>
-  </main>
-</div>
+    <section id="publications" class="section publication-section">
+      <header class="section-heading light reveal">
+        <div><span class="section-number">04</span><p class="eyebrow">Knowledge shared</p></div>
+        <h2>Patents & publications</h2>
+      </header>
+      <div class="publication-list">
+        <article class="publication featured reveal">
+          <div class="pub-type">Patent</div>
+          <div><h3>Automatic determination of an appropriate positioning of a patient-specific instrumentation with a depth camera</h3><p>EP4082469B8 · US12290325B2</p></div>
+          <a href="https://patents.google.com/patent/EP4082469A1/en" target="_blank" rel="noreferrer" aria-label="View patent">↗</a>
+        </article>
+        <article class="publication reveal">
+          <div class="pub-type">Thesis</div>
+          <div><h3>Towards a Markerless Computer Assisted Orthopaedic Surgery System</h3><p>Doctoral thesis · 2024</p></div>
+          <a href="https://theses.hal.science/" target="_blank" rel="noreferrer" aria-label="Search for thesis">↗</a>
+        </article>
+        <article class="publication reveal">
+          <div class="pub-type">Journal · 2021</div>
+          <div><h3>Towards markerless computer assisted surgery</h3><p>International Journal of Medical Robotics and Computer Assisted Surgery</p></div>
+          <a href="https://onlinelibrary.wiley.com/doi/10.1002/rcs.2296" target="_blank" rel="noreferrer" aria-label="View publication profile">↗</a>
+        </article>
+        <article class="publication reveal">
+          <div class="pub-type">CAOS · 2020</div>
+          <div><h3>Towards markerless 3D pose estimation for CAOS: comparison study of depth cameras</h3><p>International Society for Computer Assisted Orthopaedic Surgery</p></div>
+          <a href="https://easychair.org/publications/paper/6D6g" target="_blank" rel="noreferrer" aria-label="View publication profile">↗</a>
+        </article>
+        <article class="publication reveal">
+          <div class="pub-type">CARS · 2019</div>
+          <div><h3>Towards a markerless Computer Assisted Orthopaedic Surgery system</h3><p>International Journal of Computer Assisted Radiology and Surgery</p></div>
+          <a href="https://link.springer.com/article/10.1007/s11548-019-01969-3" target="_blank" rel="noreferrer" aria-label="View publication profile">↗</a>
+        </article>
+      </div>
+    </section>
 
-<script src="js/blog-data.js"></script>
-<script src="js/main.js"></script>
+    <section id="blog" class="section">
+      <header class="section-heading reveal">
+        <div><span class="section-number">05</span><p class="eyebrow">Notes in progress</p></div>
+        <h2>From the lab notebook</h2>
+      </header>
+      <div id="blog-posts" class="blog-grid"></div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Have an interesting problem?</p>
+        <h2>Let’s make something <em>precise.</em></h2>
+      </div>
+      <div class="contact-details reveal">
+        <p>The simplest way to reach me is by email. I’m always open to thoughtful conversations about C++, vision systems, applied research, and ambitious engineering.</p>
+        <a class="contact-email" href="mailto:saleh.sta@live.fr">saleh.sta@live.fr <span aria-hidden="true">↗</span></a>
+        <p class="location">France · +33 7 61 47 98 15</p>
+      </div>
+      <footer><span>© <span id="year"></span> Salaheddine STA</span><a href="#about">Back to top ↑</a></footer>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
