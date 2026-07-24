@@ -176,7 +176,8 @@ ul{ margin:0; padding:0; list-style:none; }
   color:#8b96a0;
   margin-bottom:12px;
 }
-.kv-list li{ display:flex; justify-content:space-between; font-size:.86rem; padding:4px 0; }
+.kv-list li{ display:flex; justify-content:space-between; font-size:.86rem; padding:4px 0; transition:color .2s ease, text-shadow .2s ease; }
+.kv-list li:hover{ color:#fff; text-shadow:0 0 10px rgba(37,100,114,.55); }
 .kv-list b{ color:#e6e9e6; font-weight:500; }
 
 .skill-cat{
@@ -194,6 +195,14 @@ ul{ margin:0; padding:0; list-style:none; }
   border:1px solid var(--ink-line);
   border-radius:20px;
   color:#aeb6bd;
+  transition:color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.chip-row span:hover{
+  color:#f4f6f4;
+  border-color:var(--accent);
+  background:rgba(37,100,114,.16);
+  box-shadow:0 0 14px rgba(37,100,114,.45), inset 0 0 8px rgba(37,100,114,.22);
+  transform:translateY(-1px);
 }
 
 .scrim{
