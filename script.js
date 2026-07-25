@@ -82,18 +82,6 @@ const loadRepos = async () => {
   }
 };
 
-const renderBlog = () => {
-  const container = document.querySelector("#blog-posts");
-  container.innerHTML = (window.BLOG_POSTS || []).map((post) => `
-    <article class="blog-card reveal">
-      <div class="blog-meta"><span>${escapeHTML(post.status)}</span><time>${escapeHTML(post.date)}</time></div>
-      <h3>${escapeHTML(post.title)}</h3>
-      <p>${escapeHTML(post.excerpt)}</p>
-      <a href="${escapeHTML(post.href)}" aria-label="Read ${escapeHTML(post.title)}">Read eventually <span aria-hidden="true">↗</span></a>
-    </article>
-  `).join("");
-};
-
 const setupNavigation = () => {
   const links = [...document.querySelectorAll(".site-nav a")];
   const menu = document.querySelector(".site-nav");
@@ -140,7 +128,6 @@ const setupReveals = () => {
 };
 
 document.querySelector("#year").textContent = new Date().getFullYear();
-renderBlog();
 setupNavigation();
 setupReveals();
 loadRepos();
